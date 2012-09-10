@@ -17,14 +17,14 @@ function init_socialicons() {
     if (is_admin()) {
         wp_register_script('socialicons', SOCIALICONS_URL . 'admin/view/js/socialicons.js', array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'), '1.0', true);
 
+        wp_register_style('jquery-ui', plugins_url('view/css/jquery-ui-1.8.23.custom.css', dirname(__FILE__)), null, '1.8.23', 'all');
+        wp_register_style('admin-socialicons', plugins_url('view/css/admin-socialicons.css', dirname(__FILE__)), array('jquery-ui'), '1.0', 'all');
+
+
         if (!defined('SOCIALICONS_WPNONCE')) {
             define('SOCIALICONS_WPNONCE', wp_create_nonce('socialicons_wpnonce'));
         }
 
-        wp_enqueue_script('jquery');
-        wp_enqueue_script('jquery-ui-core');
-        wp_enqueue_script('jquery-ui-dialog');
-        wp_enqueue_script('socialicons');
 
         wp_localize_script('socialicons', 'socialicons_js', array(
             'wpnonce_search_iconfinder' => SOCIALICONS_WPNONCE,
@@ -46,19 +46,27 @@ function init_socialicons() {
         ));
 
         add_action('admin_menu', 'add_options_to_wp_admin');
-        add_action('admin_head', 'admin_socialicons_header');
     } else {
         sociallinks_frontend();
     }
 }
 
-function admin_socialicons_header() {
-    echo '<link href = "' . SOCIALICONS_URL . 'admin/view/css/admin-socialicons.css" type = "text/css" rel = "stylesheet" />';
-    echo '<link href = "' . SOCIALICONS_URL . 'admin/view/css/jquery-ui-1.8.23.custom.css" type = "text/css" rel = "stylesheet" />';
+function socialicons_admin_styles() {
+    wp_enqueue_style('jquery-ui');
+    wp_enqueue_style('admin-socialicons');
+}
+
+function socialicons_admin_scripts() {
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-ui-core');
+    wp_enqueue_script('jquery-ui-dialog');
+    wp_enqueue_script('socialicons');
 }
 
 function add_options_to_wp_admin() {
-    add_menu_page('SocialIcons', 'SocialIcons', 'manage_options', 'socialicons', 'socialicons_dashboard', plugins_url('img/ic-15x15.png', dirname(dirname(__FILE__))));
+    $page = add_menu_page('SocialIcons', 'SocialIcons', 'manage_options', 'socialicons', 'socialicons_dashboard', plugins_url('img/ic-15x15.png', dirname(dirname(__FILE__))));
+    add_action('admin_print_styles-' . $page, 'socialicons_admin_styles');
+    add_action('admin_print_scripts-' . $page, 'socialicons_admin_scripts');
 }
 
 function sociallinks_frontend() {
