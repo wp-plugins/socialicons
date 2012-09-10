@@ -2,7 +2,7 @@
 Tags: social,admin,widget,shortcode,socialicon,social icon,facebook,twitter,youtube
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 1.1
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,14 @@ Go to *Wp-Admin -> SocialIcons* to see SocialIcons menu
 6. Preview example
 
 == Changelog ==
+
+= 1.2.1 =
+
+* bugfix: javascript error 
+
+= 1.2 =
+
+* bugfix: remove empty space url 
 
 = 1.1 =
 
