@@ -127,7 +127,7 @@
                             listcontent.push('<div class="name">'+socialicons_js.trl_name+': '+name+'</div>');
                             listcontent.push('<div class="status">'+socialicons_js.trl_status+': <span class="'+statusclass+'">'+status+'</span></div>');
                             listcontent.push('<div class="url">'+socialicons_js.trl_url+': '+url+'</div>');
-                            listcontent.push('<div class="iconoptions"><a href="#" class="remove_socialicon">Remove?</a> | <a href="#" class="changestatus">'+socialicons_js.trl_changestatus+'</a></div>');
+                            listcontent.push('<div class="iconoptions"><a href="#" class="remove_socialicon">'+socialicons_js.trl_remove+'</a> | <a href="#" class="changestatus">'+socialicons_js.trl_changestatus+'</a></div>');
                             listcontent.push('</div><div style="clear:both;"></div>');
                             listcontent.push('</li>');
                         });
@@ -236,6 +236,9 @@
                 },
                 'success':function(r){
                     var results = r.searchresults,listicons = [];
+                    if(typeof results == 'undefined'){
+                        return;
+                    }
                     if(typeof results.icons == 'undefined' || results.icons == null){
                         return;
                     }
