@@ -15,6 +15,7 @@ class Iconfinder {
     }
 
     public function get($q) {
+        $q = strtolower($q);
         $url = sprintf(self::__WS, $q, self::__MINDIMENSION, self::__MAXDIMENSION);
         $response = wp_remote_get($url, array('timeout' => self::__TIMEOUT));
         return $response;
