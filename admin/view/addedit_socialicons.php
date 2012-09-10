@@ -12,12 +12,23 @@ if (isset($settings) && is_array($settings)) {
 
     <div class="socialicons_news_about">
         <h3 class="socialicons_form_title"><?php _e('Wordpress Plugins? News about SocialIcons?', SOCIALICONS_LANG); ?></h3>
+        <p><strong><?php _e('Want to help make this plugin even better?', SOCIALICONS_LANG); ?></strong></p>
         <div class="form_item_green socialicons_form_item_combo socialicons_news_about_box">
             <p><?php _e('Subscribe to me on Facebook', SOCIALICONS_LANG); ?> </p>
             <iframe src="//www.facebook.com/plugins/subscribe.php?href=https%3A%2F%2Fwww.facebook.com%2Feduardostuart&amp;layout=button_count&amp;show_faces=false&amp;colorscheme=light&amp;font&amp;width=450&amp;appId=1239219039552300" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px;height:20px;" allowTransparency="true"></iframe>
             <p><?php _e('or follow me on Twitter', SOCIALICONS_LANG); ?></p>
             <a href="https://twitter.com/eduardostuart" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @eduardostuart</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <p><strong><?php _e('All donations are used to improve this plugin', SOCIALICONS_LANG); ?></strong></p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" target="_blank" method="post">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="NK2RR922VKQME">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+            </form>
+            <p>....<?php _e('Or you could', SOCIALICONS_LANG); ?></p>
+            <p>- <a target="_blank" href="http://wordpress.org/extend/plugins/socialicons/"><?php _e('Rate the plugin 5 stars on WordPress.org', SOCIALICONS_LANG); ?></a></p>
+            <p>- <a target="_blank" href="http://wordpress.org/extend/plugins/socialicons/"><?php _e('Blog about it & link to the plugin page', SOCIALICONS_LANG); ?></a></p>
         </div>
     </div>
 
