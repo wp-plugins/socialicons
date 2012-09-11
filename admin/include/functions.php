@@ -297,7 +297,7 @@ function socialicons_shortcode($atts) {
     extract(shortcode_atts($default, $atts));
 
 
-    echo getSocialIconsHTML(array(
+    return getSocialIconsHTML(array(
         'id' => $id,
         'class' => $class
     ));
