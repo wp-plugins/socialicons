@@ -4,7 +4,7 @@
   Plugin Name: SocialIcons
   Plugin URI: http://eduardostuart.com.br/wordpress-plugin-socialicons/
   Description: SocialIcons is a wordPress pugin that makes it easy to include social icons into your WordPress blog.
-  Version: 1.2.3
+  Version: 1.3
   Author: Eduardo Stuart
   Author URI: http://facebook.com/eduardostuart
   License: GPLv2 or later
@@ -15,7 +15,7 @@
 define('SOCIALICONS_LANG', 'social-icons');
 define('SOCIALICONS_URL', plugin_dir_url(__FILE__));
 define('SOCIALICONS_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-define('SOCIALICONS_VERSION', '1.2.3');
+define('SOCIALICONS_VERSION', '1.3');
 define('SOCIALICONS_DEFAULT_CSSCLASS', 'socialicons_listicons');
 
 
