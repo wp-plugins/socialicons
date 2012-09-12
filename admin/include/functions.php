@@ -42,7 +42,8 @@ function init_socialicons() {
             'trl_disabled' => __('Disabled', SOCIALICONS_LANG),
             'trl_loading' => __('Loading...', SOCIALICONS_LANG),
             'trl_changing' => __('Changing status...', SOCIALICONS_LANG),
-            'trl_changestatus' => __('Change status', SOCIALICONS_LANG)
+            'trl_changestatus' => __('Change status', SOCIALICONS_LANG),
+            'trl_remove' => __('Remove', SOCIALICONS_LANG)
         ));
 
         add_action('admin_menu', 'add_options_to_wp_admin');
@@ -296,7 +297,7 @@ function socialicons_shortcode($atts) {
     extract(shortcode_atts($default, $atts));
 
 
-    echo getSocialIconsHTML(array(
+    return getSocialIconsHTML(array(
         'id' => $id,
         'class' => $class
     ));
